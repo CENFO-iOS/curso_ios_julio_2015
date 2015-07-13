@@ -14,6 +14,8 @@
 		C38D33DA1B51C80400AB81E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38D33D91B51C80400AB81E4 /* Images.xcassets */; };
 		C38D33DD1B51C80400AB81E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38D33DB1B51C80400AB81E4 /* LaunchScreen.xib */; };
 		C38D33E91B51C80400AB81E4 /* CENFO_MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33E81B51C80400AB81E4 /* CENFO_MoviesTests.m */; };
+		C38D33F71B51CA6A00AB81E4 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33F61B51CA6A00AB81E4 /* Movie.m */; };
+		C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		C38D33E21B51C80400AB81E4 /* CENFO MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CENFO MoviesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38D33E71B51C80400AB81E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38D33E81B51C80400AB81E4 /* CENFO_MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CENFO_MoviesTests.m; sourceTree = "<group>"; };
+		C38D33F51B51CA6A00AB81E4 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		C38D33F61B51CA6A00AB81E4 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		C38D33F81B51D4C700AB81E4 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 		C38D33CB1B51C80400AB81E4 /* CENFO Movies */ = {
 			isa = PBXGroup;
 			children = (
+				C38D33F41B51C93C00AB81E4 /* View Controllers */,
+				C38D33F31B51C90800AB81E4 /* Data Model */,
 				C38D33D01B51C80400AB81E4 /* AppDelegate.h */,
 				C38D33D11B51C80400AB81E4 /* AppDelegate.m */,
 				C38D33D31B51C80400AB81E4 /* ViewController.h */,
@@ -117,6 +125,24 @@
 				C38D33E71B51C80400AB81E4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C38D33F31B51C90800AB81E4 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				C38D33F51B51CA6A00AB81E4 /* Movie.h */,
+				C38D33F61B51CA6A00AB81E4 /* Movie.m */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		C38D33F41B51C93C00AB81E4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C38D33F81B51D4C700AB81E4 /* MoviesViewController.h */,
+				C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +247,8 @@
 			files = (
 				C38D33D51B51C80400AB81E4 /* ViewController.m in Sources */,
 				C38D33D21B51C80400AB81E4 /* AppDelegate.m in Sources */,
+				C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */,
+				C38D33F71B51CA6A00AB81E4 /* Movie.m in Sources */,
 				C38D33CF1B51C80400AB81E4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
