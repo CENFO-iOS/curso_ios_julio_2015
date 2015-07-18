@@ -15,5 +15,6 @@
 @property (nonatomic,assign) int rating;
 
 +(NSArray*)getSampleMovies;
++(NSArray*)getSampleGenres;
 
 @end

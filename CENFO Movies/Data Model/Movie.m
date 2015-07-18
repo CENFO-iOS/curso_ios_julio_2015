@@ -42,4 +42,8 @@
     return [movies copy];
 }
 
++(NSArray*)getSampleGenres {
+    return @[@"Action",@"Comedy",@"Thriller",@"Drama"];
+}
+
 @end

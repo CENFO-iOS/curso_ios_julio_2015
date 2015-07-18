@@ -17,6 +17,7 @@
 		C38D33F71B51CA6A00AB81E4 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33F61B51CA6A00AB81E4 /* Movie.m */; };
 		C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */; };
 		C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B11A381B5AF9760084DF1B /* MovieFormViewController.m */; };
+		C3B11A3C1B5B03490084DF1B /* GenresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B11A3B1B5B03490084DF1B /* GenresViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		C3B11A371B5AF9760084DF1B /* MovieFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFormViewController.h; sourceTree = "<group>"; };
 		C3B11A381B5AF9760084DF1B /* MovieFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFormViewController.m; sourceTree = "<group>"; };
+		C3B11A3A1B5B03490084DF1B /* GenresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenresViewController.h; sourceTree = "<group>"; };
+		C3B11A3B1B5B03490084DF1B /* GenresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenresViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */,
 				C3B11A371B5AF9760084DF1B /* MovieFormViewController.h */,
 				C3B11A381B5AF9760084DF1B /* MovieFormViewController.m */,
+				C3B11A3A1B5B03490084DF1B /* GenresViewController.h */,
+				C3B11A3B1B5B03490084DF1B /* GenresViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				C38D33D21B51C80400AB81E4 /* AppDelegate.m in Sources */,
 				C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */,
 				C38D33F71B51CA6A00AB81E4 /* Movie.m in Sources */,
+				C3B11A3C1B5B03490084DF1B /* GenresViewController.m in Sources */,
 				C38D33CF1B51C80400AB81E4 /* main.m in Sources */,
 				C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */,
 			);
