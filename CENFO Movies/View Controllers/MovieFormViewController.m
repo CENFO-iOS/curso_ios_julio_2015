@@ -7,8 +7,9 @@
 //
 
 #import "MovieFormViewController.h"
+#import "GenresViewController.h"
 
-@interface MovieFormViewController ()
+@interface MovieFormViewController () <GenresViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel* genreLabel;
@@ -52,14 +53,30 @@
     }
 }
 
-/*
+#pragma mark - GenresViewControllerDelegate
+-(void)genresViewControllerDidCancel:(GenresViewController *)controller {
+
+}
+
+-(void)genresViewcontroller:(GenresViewController *)controller didSelectGenre:(NSString *)genre {
+    self.genreLabel.text = genre;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PickGenre"]) {
+        GenresViewController* genresController = segue.destinationViewController;
+        genresController.genre = self.genreLabel.text;
+        genresController.delegate = self;
+    }
 }
-*/
+
 
 @end

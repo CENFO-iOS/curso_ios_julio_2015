@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class GenresViewController;
+
+@protocol GenresViewControllerDelegate <NSObject>
+
+-(void)genresViewControllerDidCancel:(GenresViewController*)controller;
+
+@optional
+-(void)genresViewcontroller:(GenresViewController*)controller didSelectGenre:(NSString*)genre;
+
+@end
+
 @interface GenresViewController : UITableViewController
+
+@property (nonatomic,strong) NSString* genre;
+@property (nonatomic,weak) id<GenresViewControllerDelegate> delegate;
 
 @end

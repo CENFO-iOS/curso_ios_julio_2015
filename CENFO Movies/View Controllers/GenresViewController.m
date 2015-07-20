@@ -7,8 +7,12 @@
 //
 
 #import "GenresViewController.h"
+#import "Movie.h"
 
 @interface GenresViewController ()
+
+@property (nonatomic,strong) NSArray* genres;
+@property (nonatomic,assign) NSUInteger selectedIndex;
 
 @end
 
@@ -16,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.genres = [Movie getSampleGenres];
+    self.selectedIndex = [self.genres indexOfObject:self.genre];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,26 +39,47 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.genres.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenreCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = self.genres[indexPath.row];
+    if (indexPath.row == self.selectedIndex) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (self.selectedIndex != NSNotFound) {
+        NSIndexPath* prevIndexPath = [NSIndexPath indexPathForItem:self.selectedIndex inSection:0];
+        UITableViewCell* cell = [tableView cellForRowAtIndexPath:prevIndexPath];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    self.selectedIndex = indexPath.row;
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    if ([self.delegate respondsToSelector:@selector(genresViewcontroller:didSelectGenre:)]) {
+        NSString* genre = self.genres[self.selectedIndex];
+        [self.delegate genresViewcontroller:self didSelectGenre:genre];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
