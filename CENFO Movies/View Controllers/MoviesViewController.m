@@ -7,9 +7,10 @@
 //
 
 #import "MoviesViewController.h"
+#import "MovieFormViewController.h"
 #import "Movie.h"
 
-@interface MoviesViewController ()
+@interface MoviesViewController () <MovieFormViewControllerDelegate>
 
 @property (nonatomic,strong) NSMutableArray* movies;
 
@@ -22,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem* add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMovie)];
+    self.navigationItem.rightBarButtonItem = add;
+    
     self.movies = [[Movie getSampleMovies] mutableCopy];
     //NSArray* movieList = [Movie getSampleMovies];
     //self.movies = [movieList mutableCopy];
@@ -32,7 +36,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 // 2. Vista lista para mostrarse - Aun no se ve
@@ -57,6 +61,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private Methods
+-(void)addMovie {
+    [self performSegueWithIdentifier:@"AddMovie" sender:nil];
 }
 
 #pragma mark - Table view data source
@@ -85,25 +94,27 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self.movies removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-*/
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"ShowMovie" sender:indexPath];
+}
 
 /*
 // Override to support rearranging the table view.
@@ -119,14 +130,57 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowMovie"]) {
+        NSIndexPath* indexPath = sender;
+        Movie* movie = [self.movies objectAtIndex:indexPath.row];
+        
+        UINavigationController* navController = segue.destinationViewController;
+        MovieFormViewController* formController = [navController.viewControllers firstObject];
+        formController.movieToEdit = movie;
+        formController.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"AddMovie"]) {
+        UINavigationController* navController = segue.destinationViewController;
+        MovieFormViewController* formController = [navController.viewControllers firstObject];
+        formController.delegate = self;
+    }
 }
-*/
+
+#pragma mark - MovieFormViewControllerDelegate
+-(void)movieFormViewControllerDidCancel:(MovieFormViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)movieFormViewController:(MovieFormViewController *)controller didEditMovie:(Movie *)movie {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //MANERA INCORRECTA: OJO!!!!
+        //ESTE METODO RECARGA TODA LA TABLA
+        //[self.tableView reloadData];
+        
+        //MANERA CORRECTISIMA!
+        //Esto solo recarga una sola fila
+        NSUInteger movieIndex = [self.movies indexOfObject:movie];
+        NSIndexPath* indexPath = [NSIndexPath indexPathForItem:movieIndex inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    
+    
+
+}
+
+-(void)movieFormViewController:(MovieFormViewController *)controller didAddMovie:(Movie *)movie {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self.movies addObject:movie];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.movies.count-1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+}
 
 @end

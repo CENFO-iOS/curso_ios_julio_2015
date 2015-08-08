@@ -21,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (self.movieToEdit) {
+        // Estamos Modificando
+        self.title = @"Edit Movie";
+        self.nameTextField.text = self.movieToEdit.name;
+        self.genreLabel.text = self.movieToEdit.genre;
+    } else {
+        self.title = @"New Movie";
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -34,12 +43,42 @@
 }
 
 #pragma mark - Actions
+- (BOOL)isFormValid {
+    if ([self.nameTextField.text isEqualToString:@""]) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Please write a Movie Title" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        
+        [self.nameTextField becomeFirstResponder];
+        
+        return NO;
+    } 
+    
+    return YES;
+}
+
 - (IBAction)done:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([self isFormValid]) {
+        if (self.movieToEdit) {
+            self.movieToEdit.name = self.nameTextField.text;
+            self.movieToEdit.genre = self.genreLabel.text;
+            
+            if ([self.delegate respondsToSelector:@selector(movieFormViewController:didEditMovie:)]) {
+                [self.delegate movieFormViewController:self didEditMovie:self.movieToEdit];
+            }
+        } else {
+            Movie* newMovie = [Movie new];
+            newMovie.name = self.nameTextField.text;
+            newMovie.genre = self.genreLabel.text;
+            newMovie.rating = 1;
+            
+            if ([self.delegate respondsToSelector:@selector(movieFormViewController:didAddMovie:)]) {
+                [self.delegate movieFormViewController:self didAddMovie:newMovie];
+            }
+        }
+    }
 }
 
 - (IBAction)cancel:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate movieFormViewControllerDidCancel:self];
 }
 
 #pragma mark - Table View Delegate

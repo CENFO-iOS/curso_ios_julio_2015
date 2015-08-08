@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
+
+@protocol MovieFormViewControllerDelegate;
 
 @interface MovieFormViewController : UITableViewController 
+
+@property (nonatomic,strong) Movie* movieToEdit;
+@property (nonatomic,weak) id<MovieFormViewControllerDelegate> delegate;
+
+@end
+
+@protocol MovieFormViewControllerDelegate <NSObject>
+
+-(void)movieFormViewControllerDidCancel:(MovieFormViewController*)controller;
+
+@optional
+-(void)movieFormViewController:(MovieFormViewController*)controller didAddMovie:(Movie*)movie;
+-(void)movieFormViewController:(MovieFormViewController*)controller didEditMovie:(Movie*)movie;
 
 @end

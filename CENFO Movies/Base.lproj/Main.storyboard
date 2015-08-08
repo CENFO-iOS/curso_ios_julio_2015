@@ -35,7 +35,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Zng-ps-RO8" kind="presentation" identifier="ShowMovie" trigger="accessoryAction" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="auq-2e-aK1"/>
                                     <segue destination="faT-sJ-7mg" kind="show" id="naq-t7-qjf"/>
                                 </connections>
                             </tableViewCell>
@@ -46,6 +45,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="EoF-fj-fsL"/>
+                    <connections>
+                        <segue destination="Zng-ps-RO8" kind="presentation" identifier="ShowMovie" id="Wul-Qc-1pn"/>
+                        <segue destination="Zng-ps-RO8" kind="presentation" identifier="AddMovie" id="yon-Ho-2mR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEB-jX-YUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,4 +237,7 @@
             <point key="canvasLocation" x="2900" y="1286"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yon-Ho-2mR"/>
+    </inferredMetricsTieBreakers>
 </document>
