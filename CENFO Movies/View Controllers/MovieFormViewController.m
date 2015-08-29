@@ -24,8 +24,10 @@
     if (self.movieToEdit) {
         // Estamos Modificando
         self.title = @"Edit Movie";
+        /*
         self.nameTextField.text = self.movieToEdit.name;
         self.genreLabel.text = self.movieToEdit.genre;
+         */
     } else {
         self.title = @"New Movie";
     }
@@ -58,20 +60,23 @@
 - (IBAction)done:(UIBarButtonItem *)sender {
     if ([self isFormValid]) {
         if (self.movieToEdit) {
+            /*
             self.movieToEdit.name = self.nameTextField.text;
             self.movieToEdit.genre = self.genreLabel.text;
+             */
             
             if ([self.delegate respondsToSelector:@selector(movieFormViewController:didEditMovie:)]) {
                 [self.delegate movieFormViewController:self didEditMovie:self.movieToEdit];
             }
         } else {
+            /*
             Movie* newMovie = [Movie new];
             newMovie.name = self.nameTextField.text;
             newMovie.genre = self.genreLabel.text;
             newMovie.rating = 1;
-            
+            */
             if ([self.delegate respondsToSelector:@selector(movieFormViewController:didAddMovie:)]) {
-                [self.delegate movieFormViewController:self didAddMovie:newMovie];
+                //[self.delegate movieFormViewController:self didAddMovie:newMovie];
             }
         }
     }

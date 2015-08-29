@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.genres = [Movie getSampleGenres];
+    //self.genres = [Movie getSampleGenres];
     self.selectedIndex = [self.genres indexOfObject:self.genre];
     
     // Uncomment the following line to preserve selection between presentations.

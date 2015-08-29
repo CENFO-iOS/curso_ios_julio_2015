@@ -26,7 +26,7 @@
     UIBarButtonItem* add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMovie)];
     self.navigationItem.rightBarButtonItem = add;
     
-    self.movies = [[Movie getSampleMovies] mutableCopy];
+    //self.movies = [[Movie getSampleMovies] mutableCopy];
     //NSArray* movieList = [Movie getSampleMovies];
     //self.movies = [movieList mutableCopy];
     
@@ -86,10 +86,10 @@
     
     // Configure the cell...
     Movie* movie = self.movies[indexPath.row];
-    
+    /*
     cell.textLabel.text = movie.name;
     cell.detailTextLabel.text = movie.genre;
-    
+    */
     return cell;
 }
 
