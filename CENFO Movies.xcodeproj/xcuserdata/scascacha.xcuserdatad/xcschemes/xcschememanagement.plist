@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>RefreshModel.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>C38D33E11B51C80400AB81E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C39095E81B76C1F400BCC62B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -6,7 +6,22 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		C39095E81B76C1F400BCC62B /* RefreshModel */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C39095E91B76C1F400BCC62B /* Build configuration list for PBXAggregateTarget "RefreshModel" */;
+			buildPhases = (
+				C39095EC1B76C20200BCC62B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = RefreshModel;
+			productName = RefreshModel;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		BF3418094E4543B772A877FD /* libPods-CENFO Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0795A1CAD59D5A4F2F71A8 /* libPods-CENFO Movies.a */; };
 		C38D33CF1B51C80400AB81E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33CE1B51C80400AB81E4 /* main.m */; };
 		C38D33D21B51C80400AB81E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33D11B51C80400AB81E4 /* AppDelegate.m */; };
 		C38D33D51B51C80400AB81E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33D41B51C80400AB81E4 /* ViewController.m */; };
@@ -14,8 +29,11 @@
 		C38D33DA1B51C80400AB81E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38D33D91B51C80400AB81E4 /* Images.xcassets */; };
 		C38D33DD1B51C80400AB81E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38D33DB1B51C80400AB81E4 /* LaunchScreen.xib */; };
 		C38D33E91B51C80400AB81E4 /* CENFO_MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33E81B51C80400AB81E4 /* CENFO_MoviesTests.m */; };
-		C38D33F71B51CA6A00AB81E4 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33F61B51CA6A00AB81E4 /* Movie.m */; };
 		C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */; };
+		C39095DC1B76B9D800BCC62B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39095DB1B76B9D800BCC62B /* CoreData.framework */; };
+		C39095E01B76BAA000BCC62B /* CENFOMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C39095DE1B76BAA000BCC62B /* CENFOMovies.xcdatamodeld */; };
+		C39095E51B76C08900BCC62B /* _Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C39095E21B76C08900BCC62B /* _Movie.m */; };
+		C39095E61B76C08900BCC62B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = C39095E41B76C08900BCC62B /* Movie.m */; };
 		C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B11A381B5AF9760084DF1B /* MovieFormViewController.m */; };
 		C3B11A3C1B5B03490084DF1B /* GenresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B11A3B1B5B03490084DF1B /* GenresViewController.m */; };
 /* End PBXBuildFile section */
@@ -31,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D85EC1B0A7D1BCA2A0250B4 /* Pods-CENFO Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CENFO Movies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CENFO Movies/Pods-CENFO Movies.debug.xcconfig"; sourceTree = "<group>"; };
+		4B0795A1CAD59D5A4F2F71A8 /* libPods-CENFO Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CENFO Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38D33C91B51C80400AB81E4 /* CENFO Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CENFO Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38D33CD1B51C80400AB81E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38D33CE1B51C80400AB81E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,14 +64,19 @@
 		C38D33E21B51C80400AB81E4 /* CENFO MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CENFO MoviesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38D33E71B51C80400AB81E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38D33E81B51C80400AB81E4 /* CENFO_MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CENFO_MoviesTests.m; sourceTree = "<group>"; };
-		C38D33F51B51CA6A00AB81E4 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
-		C38D33F61B51CA6A00AB81E4 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		C38D33F81B51D4C700AB81E4 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
 		C38D33F91B51D4C700AB81E4 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		C39095DB1B76B9D800BCC62B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C39095DF1B76BAA000BCC62B /* CENFOMovies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CENFOMovies.xcdatamodel; sourceTree = "<group>"; };
+		C39095E11B76C08900BCC62B /* _Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Movie.h; sourceTree = "<group>"; };
+		C39095E21B76C08900BCC62B /* _Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Movie.m; sourceTree = "<group>"; };
+		C39095E31B76C08900BCC62B /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		C39095E41B76C08900BCC62B /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		C3B11A371B5AF9760084DF1B /* MovieFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFormViewController.h; sourceTree = "<group>"; };
 		C3B11A381B5AF9760084DF1B /* MovieFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFormViewController.m; sourceTree = "<group>"; };
 		C3B11A3A1B5B03490084DF1B /* GenresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenresViewController.h; sourceTree = "<group>"; };
 		C3B11A3B1B5B03490084DF1B /* GenresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenresViewController.m; sourceTree = "<group>"; };
+		EA67E665375F23EE290CF372 /* Pods-CENFO Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CENFO Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-CENFO Movies/Pods-CENFO Movies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39095DC1B76B9D800BCC62B /* CoreData.framework in Frameworks */,
+				BF3418094E4543B772A877FD /* libPods-CENFO Movies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +105,8 @@
 				C38D33CB1B51C80400AB81E4 /* CENFO Movies */,
 				C38D33E51B51C80400AB81E4 /* CENFO MoviesTests */,
 				C38D33CA1B51C80400AB81E4 /* Products */,
+				FF9DBAC542E070968CA42793 /* Pods */,
+				F2A4508095E1EDFBCBA4AAE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +122,8 @@
 		C38D33CB1B51C80400AB81E4 /* CENFO Movies */ = {
 			isa = PBXGroup;
 			children = (
+				C39095DD1B76BA4300BCC62B /* Core Data Model */,
 				C38D33F41B51C93C00AB81E4 /* View Controllers */,
-				C38D33F31B51C90800AB81E4 /* Data Model */,
 				C38D33D01B51C80400AB81E4 /* AppDelegate.h */,
 				C38D33D11B51C80400AB81E4 /* AppDelegate.m */,
 				C38D33D31B51C80400AB81E4 /* ViewController.h */,
@@ -133,15 +162,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C38D33F31B51C90800AB81E4 /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				C38D33F51B51CA6A00AB81E4 /* Movie.h */,
-				C38D33F61B51CA6A00AB81E4 /* Movie.m */,
-			);
-			path = "Data Model";
-			sourceTree = "<group>";
-		};
 		C38D33F41B51C93C00AB81E4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +175,44 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		C39095DD1B76BA4300BCC62B /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				C39095E71B76C0C800BCC62B /* Machine Files */,
+				C39095E31B76C08900BCC62B /* Movie.h */,
+				C39095E41B76C08900BCC62B /* Movie.m */,
+				C39095DE1B76BAA000BCC62B /* CENFOMovies.xcdatamodeld */,
+			);
+			path = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		C39095E71B76C0C800BCC62B /* Machine Files */ = {
+			isa = PBXGroup;
+			children = (
+				C39095E11B76C08900BCC62B /* _Movie.h */,
+				C39095E21B76C08900BCC62B /* _Movie.m */,
+			);
+			name = "Machine Files";
+			sourceTree = "<group>";
+		};
+		F2A4508095E1EDFBCBA4AAE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C39095DB1B76B9D800BCC62B /* CoreData.framework */,
+				4B0795A1CAD59D5A4F2F71A8 /* libPods-CENFO Movies.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF9DBAC542E070968CA42793 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D85EC1B0A7D1BCA2A0250B4 /* Pods-CENFO Movies.debug.xcconfig */,
+				EA67E665375F23EE290CF372 /* Pods-CENFO Movies.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C38D33EC1B51C80400AB81E4 /* Build configuration list for PBXNativeTarget "CENFO Movies" */;
 			buildPhases = (
+				4A82CED194746EA18BE84FBE /* Check Pods Manifest.lock */,
 				C38D33C51B51C80400AB81E4 /* Sources */,
 				C38D33C61B51C80400AB81E4 /* Frameworks */,
 				C38D33C71B51C80400AB81E4 /* Resources */,
+				B103BC53C848524E6F98B1A3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +269,9 @@
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = C38D33C81B51C80400AB81E4;
 					};
+					C39095E81B76C1F400BCC62B = {
+						CreatedOnToolsVersion = 6.4;
+					};
 				};
 			};
 			buildConfigurationList = C38D33C41B51C80400AB81E4 /* Build configuration list for PBXProject "CENFO Movies" */;
@@ -226,6 +289,7 @@
 			targets = (
 				C38D33C81B51C80400AB81E4 /* CENFO Movies */,
 				C38D33E11B51C80400AB81E4 /* CENFO MoviesTests */,
+				C39095E81B76C1F400BCC62B /* RefreshModel */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +314,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A82CED194746EA18BE84FBE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B103BC53C848524E6F98B1A3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CENFO Movies/Pods-CENFO Movies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C39095EC1B76C20200BCC62B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd /Users/scascacha/Documents/CENFO-Julio2015/CENFO\\ Movies/CENFO\\ Movies/Core\\ Data\\ Model\nmogenerator --v2 --model CENFOMovies.xcdatamodeld";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C38D33C51B51C80400AB81E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -257,10 +367,12 @@
 			files = (
 				C38D33D51B51C80400AB81E4 /* ViewController.m in Sources */,
 				C38D33D21B51C80400AB81E4 /* AppDelegate.m in Sources */,
+				C39095E51B76C08900BCC62B /* _Movie.m in Sources */,
 				C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */,
-				C38D33F71B51CA6A00AB81E4 /* Movie.m in Sources */,
 				C3B11A3C1B5B03490084DF1B /* GenresViewController.m in Sources */,
 				C38D33CF1B51C80400AB81E4 /* main.m in Sources */,
+				C39095E61B76C08900BCC62B /* Movie.m in Sources */,
+				C39095E01B76BAA000BCC62B /* CENFOMovies.xcdatamodeld in Sources */,
 				C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +499,7 @@
 		};
 		C38D33ED1B51C80400AB81E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D85EC1B0A7D1BCA2A0250B4 /* Pods-CENFO Movies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CENFO Movies/Info.plist";
@@ -398,6 +511,7 @@
 		};
 		C38D33EE1B51C80400AB81E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA67E665375F23EE290CF372 /* Pods-CENFO Movies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CENFO Movies/Info.plist";
@@ -441,6 +555,20 @@
 			};
 			name = Release;
 		};
+		C39095EA1B76C1F400BCC62B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C39095EB1B76C1F400BCC62B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -471,7 +599,28 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C39095E91B76C1F400BCC62B /* Build configuration list for PBXAggregateTarget "RefreshModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39095EA1B76C1F400BCC62B /* Debug */,
+				C39095EB1B76C1F400BCC62B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C39095DE1B76BAA000BCC62B /* CENFOMovies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C39095DF1B76BAA000BCC62B /* CENFOMovies.xcdatamodel */,
+			);
+			currentVersion = C39095DF1B76BAA000BCC62B /* CENFOMovies.xcdatamodel */;
+			path = CENFOMovies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C38D33C11B51C80400AB81E4 /* Project object */;
 }
