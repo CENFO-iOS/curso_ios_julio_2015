@@ -16,6 +16,12 @@ extern const struct MovieAttributes {
 	__unsafe_unretained NSString *voteCount;
 } MovieAttributes;
 
+extern const struct MovieRelationships {
+	__unsafe_unretained NSString *credits;
+} MovieRelationships;
+
+@class Credit;
+
 @interface MovieID : NSManagedObjectID {}
 @end
 
@@ -85,6 +91,18 @@ extern const struct MovieAttributes {
 
 //- (BOOL)validateVoteCount:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSSet *credits;
+
+- (NSMutableSet*)creditsSet;
+
+@end
+
+@interface _Movie (CreditsCoreDataGeneratedAccessors)
+- (void)addCredits:(NSSet*)value_;
+- (void)removeCredits:(NSSet*)value_;
+- (void)addCreditsObject:(Credit*)value_;
+- (void)removeCreditsObject:(Credit*)value_;
+
 @end
 
 @interface _Movie (CoreDataGeneratedPrimitiveAccessors)
@@ -133,5 +151,8 @@ extern const struct MovieAttributes {
 
 - (int64_t)primitiveVoteCountValue;
 - (void)setPrimitiveVoteCountValue:(int64_t)value_;
+
+- (NSMutableSet*)primitiveCredits;
+- (void)setPrimitiveCredits:(NSMutableSet*)value;
 
 @end

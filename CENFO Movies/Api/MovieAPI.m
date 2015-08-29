@@ -7,6 +7,7 @@
 //
 
 #import "MovieAPI.h"
+#import "MovieDB.h"
 
 static NSString * const kAPIURLString = @"http://api.themoviedb.org/3/";
 static NSString * const kAPIKey = @"3ee78ac4ee39420ef1b0746e909bc48b";
@@ -41,10 +42,28 @@ static NSString * const kAPIKey = @"3ee78ac4ee39420ef1b0746e909bc48b";
 -(void)getConfiguration {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"api_key"] = kAPIKey;
+    
     [self GET:@"configuration" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"%@",responseObject);
         self.imageBaseURLString = responseObject[@"images"][@"base_url"];
         NSLog(@"%@",self.imageBaseURLString);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+#pragma mark - Movie
+-(void)getPopularMovies {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"api_key"] = kAPIKey;
+    
+    [self GET:@"movie/popular" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray* results = responseObject[@"results"];
+        for (NSDictionary* dict in results) {
+            [Movie newMovieWithDictionary:dict];
+        }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);

@@ -16,6 +16,10 @@ const struct MovieAttributes MovieAttributes = {
 	.voteCount = @"voteCount",
 };
 
+const struct MovieRelationships MovieRelationships = {
+	.credits = @"credits",
+};
+
 @implementation MovieID
 @end
 
@@ -179,6 +183,17 @@ const struct MovieAttributes MovieAttributes = {
 
 - (void)setPrimitiveVoteCountValue:(int64_t)value_ {
 	[self setPrimitiveVoteCount:@(value_)];
+}
+
+@dynamic credits;
+
+- (NSMutableSet*)creditsSet {
+	[self willAccessValueForKey:@"credits"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"credits"];
+
+	[self didAccessValueForKey:@"credits"];
+	return result;
 }
 
 @end

@@ -21,4 +21,7 @@ typedef void (^MovieAPIResponse)(id response, NSError *error);
 #pragma mark - Configuration
 -(void)getConfiguration;
 
+#pragma mark - Movie
+-(void)getPopularMovies;
+
 @end

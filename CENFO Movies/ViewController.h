@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieDB.h"
 
 @interface ViewController : UIViewController
 

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Credit" representedClassName="Credit" syncable="YES">
+        <attribute name="character" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="credits" inverseEntity="Movie" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="credits" inverseEntity="Person" syncable="YES"/>
+    </entity>
     <entity name="Movie" representedClassName="Movie" syncable="YES">
         <attribute name="backdropPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="code" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -11,8 +16,19 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="voteAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="voteCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="credits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Credit" inverseName="movie" inverseEntity="Credit" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_path" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="credits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Credit" inverseName="person" inverseEntity="Credit" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Movie" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="Person" positionX="342" positionY="-25" width="128" height="133"/>
+        <element name="Credit" positionX="133" positionY="99" width="128" height="88"/>
     </elements>
 </model>

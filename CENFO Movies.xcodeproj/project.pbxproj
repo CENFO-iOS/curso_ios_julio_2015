@@ -37,6 +37,11 @@
 		C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B11A381B5AF9760084DF1B /* MovieFormViewController.m */; };
 		C3B11A3C1B5B03490084DF1B /* GenresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B11A3B1B5B03490084DF1B /* GenresViewController.m */; };
 		C3E9374B1B9220FC0070B6A3 /* MovieAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E9374A1B9220FC0070B6A3 /* MovieAPI.m */; };
+		C3E937531B924E260070B6A3 /* _Credit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937501B924E260070B6A3 /* _Credit.m */; };
+		C3E937541B924E260070B6A3 /* _Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937521B924E260070B6A3 /* _Person.m */; };
+		C3E937591B924E320070B6A3 /* Credit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937561B924E320070B6A3 /* Credit.m */; };
+		C3E9375A1B924E320070B6A3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937581B924E320070B6A3 /* Person.m */; };
+		C3E9375D1B9250740070B6A3 /* NSManagedObject+MovieCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E9375C1B9250740070B6A3 /* NSManagedObject+MovieCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +84,17 @@
 		C3B11A3B1B5B03490084DF1B /* GenresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenresViewController.m; sourceTree = "<group>"; };
 		C3E937491B9220FC0070B6A3 /* MovieAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieAPI.h; sourceTree = "<group>"; };
 		C3E9374A1B9220FC0070B6A3 /* MovieAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieAPI.m; sourceTree = "<group>"; };
+		C3E9374F1B924E260070B6A3 /* _Credit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Credit.h; sourceTree = "<group>"; };
+		C3E937501B924E260070B6A3 /* _Credit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Credit.m; sourceTree = "<group>"; };
+		C3E937511B924E260070B6A3 /* _Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Person.h; sourceTree = "<group>"; };
+		C3E937521B924E260070B6A3 /* _Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Person.m; sourceTree = "<group>"; };
+		C3E937551B924E320070B6A3 /* Credit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credit.h; sourceTree = "<group>"; };
+		C3E937561B924E320070B6A3 /* Credit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credit.m; sourceTree = "<group>"; };
+		C3E937571B924E320070B6A3 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		C3E937581B924E320070B6A3 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		C3E9375B1B9250740070B6A3 /* NSManagedObject+MovieCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MovieCategory.h"; sourceTree = "<group>"; };
+		C3E9375C1B9250740070B6A3 /* NSManagedObject+MovieCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MovieCategory.m"; sourceTree = "<group>"; };
+		C3E9375E1B9254F40070B6A3 /* MovieDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDB.h; sourceTree = "<group>"; };
 		EA67E665375F23EE290CF372 /* Pods-CENFO Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CENFO Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-CENFO Movies/Pods-CENFO Movies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,7 +201,14 @@
 				C39095E71B76C0C800BCC62B /* Machine Files */,
 				C39095E31B76C08900BCC62B /* Movie.h */,
 				C39095E41B76C08900BCC62B /* Movie.m */,
+				C3E937551B924E320070B6A3 /* Credit.h */,
+				C3E937561B924E320070B6A3 /* Credit.m */,
+				C3E937571B924E320070B6A3 /* Person.h */,
+				C3E937581B924E320070B6A3 /* Person.m */,
 				C39095DE1B76BAA000BCC62B /* CENFOMovies.xcdatamodeld */,
+				C3E9375B1B9250740070B6A3 /* NSManagedObject+MovieCategory.h */,
+				C3E9375C1B9250740070B6A3 /* NSManagedObject+MovieCategory.m */,
+				C3E9375E1B9254F40070B6A3 /* MovieDB.h */,
 			);
 			path = "Core Data Model";
 			sourceTree = "<group>";
@@ -193,6 +216,10 @@
 		C39095E71B76C0C800BCC62B /* Machine Files */ = {
 			isa = PBXGroup;
 			children = (
+				C3E9374F1B924E260070B6A3 /* _Credit.h */,
+				C3E937501B924E260070B6A3 /* _Credit.m */,
+				C3E937511B924E260070B6A3 /* _Person.h */,
+				C3E937521B924E260070B6A3 /* _Person.m */,
 				C39095E11B76C08900BCC62B /* _Movie.h */,
 				C39095E21B76C08900BCC62B /* _Movie.m */,
 			);
@@ -379,6 +406,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38D33D51B51C80400AB81E4 /* ViewController.m in Sources */,
+				C3E937591B924E320070B6A3 /* Credit.m in Sources */,
+				C3E9375A1B924E320070B6A3 /* Person.m in Sources */,
+				C3E937531B924E260070B6A3 /* _Credit.m in Sources */,
 				C38D33D21B51C80400AB81E4 /* AppDelegate.m in Sources */,
 				C39095E51B76C08900BCC62B /* _Movie.m in Sources */,
 				C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */,
@@ -387,6 +417,8 @@
 				C38D33CF1B51C80400AB81E4 /* main.m in Sources */,
 				C39095E61B76C08900BCC62B /* Movie.m in Sources */,
 				C39095E01B76BAA000BCC62B /* CENFOMovies.xcdatamodeld in Sources */,
+				C3E937541B924E260070B6A3 /* _Person.m in Sources */,
+				C3E9375D1B9250740070B6A3 /* NSManagedObject+MovieCategory.m in Sources */,
 				C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
