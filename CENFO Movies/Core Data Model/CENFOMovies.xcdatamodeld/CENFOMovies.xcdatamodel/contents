@@ -21,14 +21,14 @@
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="biography" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="profile_path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profilePath" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="credits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Credit" inverseName="person" inverseEntity="Credit" syncable="YES"/>
     </entity>
     <elements>
         <element name="Movie" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="Person" positionX="342" positionY="-25" width="128" height="133"/>
+        <element name="Person" positionX="342" positionY="-25" width="128" height="28"/>
         <element name="Credit" positionX="133" positionY="99" width="128" height="88"/>
     </elements>
 </model>

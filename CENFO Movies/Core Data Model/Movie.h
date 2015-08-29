@@ -11,6 +11,10 @@
                     title:(NSString*)title
                 haveVideo:(BOOL)haveVideo
                  overview:(NSString*)overview
-               popularity:(float)popularity;
+               popularity:(float)popularity
+               posterPath:(NSString*)posterPath
+              releaseDate:(NSDate*)releaseDate
+              voteAverage:(float)voteAverage
+                voteCount:(int)voteCount;
 
 @end

@@ -6,9 +6,9 @@
 extern const struct PersonAttributes {
 	__unsafe_unretained NSString *biography;
 	__unsafe_unretained NSString *birthday;
-	__unsafe_unretained NSString *id;
+	__unsafe_unretained NSString *code;
 	__unsafe_unretained NSString *name;
-	__unsafe_unretained NSString *profile_path;
+	__unsafe_unretained NSString *profilePath;
 } PersonAttributes;
 
 extern const struct PersonRelationships {
@@ -34,21 +34,21 @@ extern const struct PersonRelationships {
 
 //- (BOOL)validateBirthday:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* id;
+@property (nonatomic, strong) NSNumber* code;
 
-@property (atomic) int64_t idValue;
-- (int64_t)idValue;
-- (void)setIdValue:(int64_t)value_;
+@property (atomic) int64_t codeValue;
+- (int64_t)codeValue;
+- (void)setCodeValue:(int64_t)value_;
 
-//- (BOOL)validateId:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateCode:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* name;
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSString* profile_path;
+@property (nonatomic, strong) NSString* profilePath;
 
-//- (BOOL)validateProfile_path:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateProfilePath:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSSet *credits;
 
@@ -72,17 +72,17 @@ extern const struct PersonRelationships {
 - (NSDate*)primitiveBirthday;
 - (void)setPrimitiveBirthday:(NSDate*)value;
 
-- (NSNumber*)primitiveId;
-- (void)setPrimitiveId:(NSNumber*)value;
+- (NSNumber*)primitiveCode;
+- (void)setPrimitiveCode:(NSNumber*)value;
 
-- (int64_t)primitiveIdValue;
-- (void)setPrimitiveIdValue:(int64_t)value_;
+- (int64_t)primitiveCodeValue;
+- (void)setPrimitiveCodeValue:(int64_t)value_;
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
 
-- (NSString*)primitiveProfile_path;
-- (void)setPrimitiveProfile_path:(NSString*)value;
+- (NSString*)primitiveProfilePath;
+- (void)setPrimitiveProfilePath:(NSString*)value;
 
 - (NSMutableSet*)primitiveCredits;
 - (void)setPrimitiveCredits:(NSMutableSet*)value;

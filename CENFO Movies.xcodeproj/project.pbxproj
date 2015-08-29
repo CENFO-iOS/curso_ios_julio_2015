@@ -42,6 +42,7 @@
 		C3E937591B924E320070B6A3 /* Credit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937561B924E320070B6A3 /* Credit.m */; };
 		C3E9375A1B924E320070B6A3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937581B924E320070B6A3 /* Person.m */; };
 		C3E9375D1B9250740070B6A3 /* NSManagedObject+MovieCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E9375C1B9250740070B6A3 /* NSManagedObject+MovieCategory.m */; };
+		C3E937621B9269C70070B6A3 /* NSString+CENFO.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E937611B9269C70070B6A3 /* NSString+CENFO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		C3E9375B1B9250740070B6A3 /* NSManagedObject+MovieCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MovieCategory.h"; sourceTree = "<group>"; };
 		C3E9375C1B9250740070B6A3 /* NSManagedObject+MovieCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MovieCategory.m"; sourceTree = "<group>"; };
 		C3E9375E1B9254F40070B6A3 /* MovieDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDB.h; sourceTree = "<group>"; };
+		C3E937601B9269C70070B6A3 /* NSString+CENFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CENFO.h"; sourceTree = "<group>"; };
+		C3E937611B9269C70070B6A3 /* NSString+CENFO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CENFO.m"; sourceTree = "<group>"; };
 		EA67E665375F23EE290CF372 /* Pods-CENFO Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CENFO Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-CENFO Movies/Pods-CENFO Movies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +144,7 @@
 		C38D33CB1B51C80400AB81E4 /* CENFO Movies */ = {
 			isa = PBXGroup;
 			children = (
+				C3E9375F1B9269B40070B6A3 /* Utils */,
 				C3E937481B9220DD0070B6A3 /* Api */,
 				C39095DD1B76BA4300BCC62B /* Core Data Model */,
 				C38D33F41B51C93C00AB81E4 /* View Controllers */,
@@ -233,6 +237,15 @@
 				C3E9374A1B9220FC0070B6A3 /* MovieAPI.m */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		C3E9375F1B9269B40070B6A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C3E937601B9269C70070B6A3 /* NSString+CENFO.h */,
+				C3E937611B9269C70070B6A3 /* NSString+CENFO.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F2A4508095E1EDFBCBA4AAE0 /* Frameworks */ = {
@@ -414,6 +427,7 @@
 				C38D33FA1B51D4C700AB81E4 /* MoviesViewController.m in Sources */,
 				C3B11A3C1B5B03490084DF1B /* GenresViewController.m in Sources */,
 				C3E9374B1B9220FC0070B6A3 /* MovieAPI.m in Sources */,
+				C3E937621B9269C70070B6A3 /* NSString+CENFO.m in Sources */,
 				C38D33CF1B51C80400AB81E4 /* main.m in Sources */,
 				C39095E61B76C08900BCC62B /* Movie.m in Sources */,
 				C39095E01B76BAA000BCC62B /* CENFOMovies.xcdatamodeld in Sources */,

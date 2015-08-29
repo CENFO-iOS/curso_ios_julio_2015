@@ -6,9 +6,9 @@
 const struct PersonAttributes PersonAttributes = {
 	.biography = @"biography",
 	.birthday = @"birthday",
-	.id = @"id",
+	.code = @"code",
 	.name = @"name",
-	.profile_path = @"profile_path",
+	.profilePath = @"profilePath",
 };
 
 const struct PersonRelationships PersonRelationships = {
@@ -41,8 +41,8 @@ const struct PersonRelationships PersonRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"idValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"id"];
+	if ([key isEqualToString:@"codeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"code"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -54,29 +54,29 @@ const struct PersonRelationships PersonRelationships = {
 
 @dynamic birthday;
 
-@dynamic id;
+@dynamic code;
 
-- (int64_t)idValue {
-	NSNumber *result = [self id];
+- (int64_t)codeValue {
+	NSNumber *result = [self code];
 	return [result longLongValue];
 }
 
-- (void)setIdValue:(int64_t)value_ {
-	[self setId:@(value_)];
+- (void)setCodeValue:(int64_t)value_ {
+	[self setCode:@(value_)];
 }
 
-- (int64_t)primitiveIdValue {
-	NSNumber *result = [self primitiveId];
+- (int64_t)primitiveCodeValue {
+	NSNumber *result = [self primitiveCode];
 	return [result longLongValue];
 }
 
-- (void)setPrimitiveIdValue:(int64_t)value_ {
-	[self setPrimitiveId:@(value_)];
+- (void)setPrimitiveCodeValue:(int64_t)value_ {
+	[self setPrimitiveCode:@(value_)];
 }
 
 @dynamic name;
 
-@dynamic profile_path;
+@dynamic profilePath;
 
 @dynamic credits;
 
