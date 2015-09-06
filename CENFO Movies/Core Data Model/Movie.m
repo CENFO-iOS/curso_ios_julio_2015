@@ -1,5 +1,6 @@
 #import "Movie.h"
 #import "NSString+CENFO.h"
+#import "MovieAPI.h"
 
 @interface Movie ()
 
@@ -9,10 +10,37 @@
 
 @implementation Movie
 
+-(NSURL*)posterImageURL {
+    NSString* baseURL = [[MovieAPI sharedMovieAPI] imageBaseURLString];
+    return [NSURL URLWithString:[baseURL stringByAppendingString:[NSString stringWithFormat:@"w500/%@",self.posterPath]]];
+}
+
+#pragma mark - Fetchs
++(NSFetchedResultsController*)fetchAllMoviesWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate {
+    return [Movie MR_fetchAllSortedBy:@"releaseDate"
+                            ascending:NO
+                        withPredicate:nil
+                              groupBy:nil
+                             delegate:delegate];
+}
+
++(NSFetchedResultsController*)fetchAllMoviesGroupedByVideoWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate {
+    /*
+     OJO: Si agrupan por X campo, usarlo en el SortedBy primero
+     */
+    return [Movie MR_fetchAllSortedBy:@"haveVideo,releaseDate"
+                            ascending:NO
+                        withPredicate:nil
+                              groupBy:@"haveVideo"
+                             delegate:delegate];
+}
+
+#pragma mark - Queries
 +(Movie*)getMovieWithCode:(NSNumber *)code {
     return [Movie MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"code == %@",code]];
 }
 
+#pragma mark - Inserts
 +(Movie*)newMovieWithDictionary:(NSDictionary*)dictionary {
     
     

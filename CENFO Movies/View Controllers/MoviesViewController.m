@@ -8,15 +8,79 @@
 
 #import "MoviesViewController.h"
 #import "MovieFormViewController.h"
+#import "MovieCell.h"
 #import "Movie.h"
 
-@interface MoviesViewController () <MovieFormViewControllerDelegate>
+@interface MoviesViewController () <MovieFormViewControllerDelegate,NSFetchedResultsControllerDelegate>
 
-@property (nonatomic,strong) NSMutableArray* movies;
+@property (nonatomic,strong) NSFetchedResultsController* movies;
 
 @end
 
 @implementation MoviesViewController
+
+#pragma mark - Fetch Results Controller
+-(NSFetchedResultsController*)movies {
+    if (_movies) {
+        return _movies;
+    }
+    _movies = [Movie fetchAllMoviesWithDelegate:self];
+    
+    return _movies;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            return;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
 
 #pragma mark - View Life Cycle
 // 1. Vista Carga - No se sabe las dimensiones
@@ -72,24 +136,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return [[self.movies sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.movies.count;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.movies sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
+    MovieCell *cell = (MovieCell*)[tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    Movie* movie = self.movies[indexPath.row];
-    /*
-    cell.textLabel.text = movie.name;
-    cell.detailTextLabel.text = movie.genre;
-    */
+    Movie* movie = [self.movies objectAtIndexPath:indexPath];
+    cell.movie = movie;
+    
     return cell;
 }
 
@@ -106,9 +169,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.movies removeObjectAtIndex:indexPath.row];
+        //[self.movies removeObjectAtIndex:indexPath.row];
+        [[self.movies objectAtIndexPath:indexPath] deleteMe];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -139,7 +203,7 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ShowMovie"]) {
         NSIndexPath* indexPath = sender;
-        Movie* movie = [self.movies objectAtIndex:indexPath.row];
+        Movie* movie = [self.movies objectAtIndexPath:indexPath];
         
         UINavigationController* navController = segue.destinationViewController;
         MovieFormViewController* formController = [navController.viewControllers firstObject];
@@ -166,8 +230,7 @@
         
         //MANERA CORRECTISIMA!
         //Esto solo recarga una sola fila
-        NSUInteger movieIndex = [self.movies indexOfObject:movie];
-        NSIndexPath* indexPath = [NSIndexPath indexPathForItem:movieIndex inSection:0];
+        NSIndexPath* indexPath = [self.movies indexPathForObject:movie];
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
     
@@ -177,10 +240,11 @@
 
 -(void)movieFormViewController:(MovieFormViewController *)controller didAddMovie:(Movie *)movie {
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    [self.movies addObject:movie];
+    /*
+    //[self.movies addObject:movie];
     NSIndexPath* indexPath = [NSIndexPath indexPathForItem:self.movies.count-1 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+     */
 }
 
 @end

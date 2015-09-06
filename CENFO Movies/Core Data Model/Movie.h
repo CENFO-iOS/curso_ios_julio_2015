@@ -4,6 +4,8 @@
 @interface Movie : _Movie {}
 // Custom logic goes here.
 
+@property (readonly,strong,nonatomic) NSURL* posterImageURL;
+
 +(Movie*)newMovieWithDictionary:(NSDictionary*)dictionary;
 
 +(Movie*)getMovieWithCode:(NSNumber*)code;
@@ -16,5 +18,9 @@
               releaseDate:(NSDate*)releaseDate
               voteAverage:(float)voteAverage
                 voteCount:(int)voteCount;
+
+#pragma mark - Fetchs
++(NSFetchedResultsController*)fetchAllMoviesWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate;
++(NSFetchedResultsController*)fetchAllMoviesGroupedByVideoWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate;
 
 @end

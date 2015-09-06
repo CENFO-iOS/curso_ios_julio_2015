@@ -22,6 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		BF3418094E4543B772A877FD /* libPods-CENFO Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0795A1CAD59D5A4F2F71A8 /* libPods-CENFO Movies.a */; };
+		C35A4FD11B9B82F50055A46E /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C35A4FD01B9B82F50055A46E /* MovieCell.m */; };
+		C35A4FD41B9B8CD20055A46E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C35A4FD31B9B8CD20055A46E /* TableViewCell.m */; };
 		C38D33CF1B51C80400AB81E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33CE1B51C80400AB81E4 /* main.m */; };
 		C38D33D21B51C80400AB81E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33D11B51C80400AB81E4 /* AppDelegate.m */; };
 		C38D33D51B51C80400AB81E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D33D41B51C80400AB81E4 /* ViewController.m */; };
@@ -58,6 +60,10 @@
 /* Begin PBXFileReference section */
 		1D85EC1B0A7D1BCA2A0250B4 /* Pods-CENFO Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CENFO Movies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CENFO Movies/Pods-CENFO Movies.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0795A1CAD59D5A4F2F71A8 /* libPods-CENFO Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CENFO Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35A4FCF1B9B82F50055A46E /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		C35A4FD01B9B82F50055A46E /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		C35A4FD21B9B8CD20055A46E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		C35A4FD31B9B8CD20055A46E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		C38D33C91B51C80400AB81E4 /* CENFO Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CENFO Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38D33CD1B51C80400AB81E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38D33CE1B51C80400AB81E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +127,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C35A4FCE1B9B82CD0055A46E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C35A4FCF1B9B82F50055A46E /* MovieCell.h */,
+				C35A4FD01B9B82F50055A46E /* MovieCell.m */,
+				C35A4FD21B9B8CD20055A46E /* TableViewCell.h */,
+				C35A4FD31B9B8CD20055A46E /* TableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C38D33C01B51C80400AB81E4 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +161,7 @@
 		C38D33CB1B51C80400AB81E4 /* CENFO Movies */ = {
 			isa = PBXGroup;
 			children = (
+				C35A4FCE1B9B82CD0055A46E /* Cells */,
 				C3E9375F1B9269B40070B6A3 /* Utils */,
 				C3E937481B9220DD0070B6A3 /* Api */,
 				C39095DD1B76BA4300BCC62B /* Core Data Model */,
@@ -431,8 +449,10 @@
 				C38D33CF1B51C80400AB81E4 /* main.m in Sources */,
 				C39095E61B76C08900BCC62B /* Movie.m in Sources */,
 				C39095E01B76BAA000BCC62B /* CENFOMovies.xcdatamodeld in Sources */,
+				C35A4FD41B9B8CD20055A46E /* TableViewCell.m in Sources */,
 				C3E937541B924E260070B6A3 /* _Person.m in Sources */,
 				C3E9375D1B9250740070B6A3 /* NSManagedObject+MovieCategory.m in Sources */,
+				C35A4FD11B9B82F50055A46E /* MovieCell.m in Sources */,
 				C3B11A391B5AF9760084DF1B /* MovieFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
